@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Styles or Extensions */
+:root {
+  --light-gray: #a6a6a6;
+  --dark-gray: #545454;
+  --dark-blue: #3e3e60;
+  --light-blue: #29abe2;
+  --black: #000000;
+}
+
+.bg-darkblue {
+  background-color: var(--dark-blue);
+}
+
+.text-darkgray {
+  color: var(--dark-gray);
+}
+
+.text-lightblue {
+  color: var(--light-blue);
+}
+
+.border-lightblue {
+  border-color: var(--light-blue);
+}
+
+/* Additional custom classes for margins, padding, etc. */
