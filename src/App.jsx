@@ -1,12 +1,8 @@
 import React from 'react';
-import Dashboard from '@/Components/Dashboard';
+import Dashboard from '@/Components/Dashboard'; // Ensure correct path and casing
 
 function App() {
-  return (
-    <div>
-      <Dashboard />
-    </div>
-  );
+  return <Dashboard />;
 }
 
 export default App;

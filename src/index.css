@@ -1,30 +1,262 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Custom Styles or Extensions */
-:root {
-  --light-gray: #a6a6a6;
-  --dark-gray: #545454;
-  --dark-blue: #3e3e60;
-  --light-blue: #29abe2;
-  --black: #000000;
+/* === General Styles === */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #3e3e60; /* Dark blue background */
+  color: white;
 }
 
-.bg-darkblue {
-  background-color: var(--dark-blue);
+/* === Dashboard === */
+.dashboard {
+  text-align: center;
+  padding: 20px;
 }
 
-.text-darkgray {
-  color: var(--dark-gray);
+/* === Header === */
+.dashboard-header {
+  margin-bottom: 20px;
 }
 
-.text-lightblue {
-  color: var(--light-blue);
+.header-image {
+  width: 50%;
+  height: 170px;
+  object-fit: cover;
 }
 
-.border-lightblue {
-  border-color: var(--light-blue);
+/* Responsive header image for small screens */
+@media (max-width: 768px) {
+  .header-image {
+    width: 90%; /* Adjusts width for mobile */
+    height: auto; /* Allows natural scaling */
+  }
 }
 
-/* Additional custom classes for margins, padding, etc. */
+.header-title {
+  font-size: 2rem;
+}
+
+/* === Tracking Cards === */
+.tracking-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  color: black;
+  margin: 0 auto; /* Centers on all screen sizes */
+}
+
+/* Responsive margin and padding for small screens */
+@media (max-width: 768px) {
+  .tracking-card {
+    margin: 10px 15px; /* Adds side margins */
+    padding: 15px;
+  }
+}
+
+.tracking-title {
+  font-size: 1.5rem;
+  color: #3e3e60;
+  margin-bottom: 20px;
+}
+
+.tracking-card p {
+  margin-bottom: 20px;
+}
+
+/* === Dashboard Content Layout === */
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px; /* Adds space on the sides */
+}
+
+/* Extra spacing for mobile */
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 0 10px; /* Reduce padding on very small screens */
+  }
+}
+
+/* === Food Tracking === */
+.food-dashboard {
+  margin-top: 20px;
+  text-align: left;
+  width: 100%;
+}
+
+.food-dashboard ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.food-dashboard li {
+  margin: 5px 0;
+  color: black;
+}
+
+.totals {
+  margin-top: 10px;
+  font-weight: bold;
+  color: black;
+}
+
+/* === Input Fields === */
+.input-fields {
+  margin-bottom: 20px;
+}
+
+.input-fields input {
+  margin: 5px 0;
+  padding: 8px;
+  width: calc(100% - 20px);
+  max-width: 380px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.input-fields input:focus {
+  border-color: #29abe2;
+  outline: none;
+}
+
+/* === Buttons === */
+button {
+  background-color: #29abe2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1e3a8a;
+}
+
+/* Remove Button */
+.remove-button {
+  margin-left: 10px;
+  background-color: #ff4d4d;
+  padding: 5px 10px;
+}
+
+.remove-button:hover {
+  background-color: #cc0000;
+}
+
+/* Clear Button */
+.clear-button {
+  margin-top: 20px;
+  background-color: #ff4d4d;
+}
+
+.clear-button:hover {
+  background-color: #cc0000;
+}
+
+/* === Water Tracking === */
+.water-drops {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.water-drop {
+  font-size: 2rem;
+  color: #29abe2;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.water-drop.clicked {
+  color: #1e3a8a;
+}
+
+/* === Workout Tracking === */
+.workout-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.exercise-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.workout-icon {
+  font-size: 2.5rem;
+  color: #29abe2;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.workout-icon:hover {
+  color: #1e3a8a;
+}
+
+.workout-icon.completed {
+  color: #1e3a8a;
+}
+
+/* === Creatine & Supplements Tracking === */
+.supplement-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.supplement-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.supplement-item label {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: black;
+}
+
+.supplement-icon {
+  font-size: 3rem;
+  color: #29abe2;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.supplement-icon:hover {
+  color: #1e3a8a;
+}
+
+.supplement-icon.clicked {
+  color: #1e3a8a;
+}
+
+/* Clear Button */
+.clear-button {
+  margin-top: 20px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.clear-button:hover {
+  background-color: #cc0000;
+}
